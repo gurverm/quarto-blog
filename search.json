@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "posts/tesla_vs_waymo.html",
+    "href": "posts/tesla_vs_waymo.html",
+    "title": "Case Study: How Waymo and Tesla Train Their Self-Driving Models",
+    "section": "",
+    "text": "Autonomous driving is one of the most ambitious applications of machine learning. A self driving car must interpret its surroundings, predict what other agents will do, and decide how to respond safely. While many companies are racing to build fully autonomous vehicles, two of the most prominent are Waymo and Tesla. Both are building the same end product: a car that can drive itself. But their machine learning strategies are fundamentally different.\nThis case study compares their approaches through a data science lens, focusing on training strategies, data quality, model design, and how each company handles uncertainty."
+  },
+  {
+    "objectID": "posts/tesla_vs_waymo.html#case-study-how-waymo-and-tesla-train-their-self-driving-models",
+    "href": "posts/tesla_vs_waymo.html#case-study-how-waymo-and-tesla-train-their-self-driving-models",
+    "title": "Case Study: How Waymo and Tesla Train Their Self-Driving Models",
+    "section": "",
+    "text": "Autonomous driving is one of the most ambitious applications of machine learning. A self driving car must interpret its surroundings, predict what other agents will do, and decide how to respond safely. While many companies are racing to build fully autonomous vehicles, two of the most prominent are Waymo and Tesla. Both are building the same end product: a car that can drive itself. But their machine learning strategies are fundamentally different.\nThis case study compares their approaches through a data science lens, focusing on training strategies, data quality, model design, and how each company handles uncertainty."
+  },
+  {
+    "objectID": "posts/tesla_vs_waymo.html#the-ml-problem-behind-self-driving-cars",
+    "href": "posts/tesla_vs_waymo.html#the-ml-problem-behind-self-driving-cars",
+    "title": "Case Study: How Waymo and Tesla Train Their Self-Driving Models",
+    "section": "The ML Problem Behind Self-Driving Cars",
+    "text": "The ML Problem Behind Self-Driving Cars\nA self driving system is typically divided into three machine learning problems: perception, prediction, and planning. Perception involves identifying objects, lane markings, and traffic signs. Prediction estimates how other agents (cars, pedestrians, cyclists) will move in the near future. Planning decides the vehicle’s next actions, balancing safety and efficiency.\nThe core challenge is that these problems must be solved in real time and under uncertainty. A misclassified object or incorrect prediction can quickly become dangerous. As a result, autonomous driving is not simply an engineering problem. It is a high stakes ML problem where data quality and model robustness are the main constraints."
+  },
+  {
+    "objectID": "posts/tesla_vs_waymo.html#tesla-learning-to-drive-from-massive-visual-data",
+    "href": "posts/tesla_vs_waymo.html#tesla-learning-to-drive-from-massive-visual-data",
+    "title": "Case Study: How Waymo and Tesla Train Their Self-Driving Models",
+    "section": "Tesla: Learning to Drive from Massive Visual Data",
+    "text": "Tesla: Learning to Drive from Massive Visual Data\nTesla’s approach is based on a simple but bold assumption: if you can collect enough real world driving data, a neural network can learn to drive like a human. Tesla relies primarily on cameras, treating driving as a computer vision problem. Their fleet of vehicles continuously collects video data, which is then used to train large neural networks.\nThe advantage of Tesla’s strategy is scale. Because Tesla has millions of cars on the road, their training data is enormous and highly diverse. This allows their models to encounter many edge cases naturally, rather than relying on simulated environments. Tesla also benefits from a continuous feedback loop: when a car fails or encounters a rare scenario, the data can be used to improve the model.\nHowever, cameraonly perception introduces major uncertainty. Cameras are sensitive to lighting conditions, glare, and weather. Depth estimation from a 2D image is inherently difficult, and the model must infer distance and speed indirectly. To compensate, Tesla’s systems rely on complex neural architectures and massive amounts of training data. In ML terms, Tesla’s strategy emphasizes generalization through data volume and model capacity."
+  },
+  {
+    "objectID": "posts/tesla_vs_waymo.html#waymo-sensor-fusion-and-structured-environmental-modeling",
+    "href": "posts/tesla_vs_waymo.html#waymo-sensor-fusion-and-structured-environmental-modeling",
+    "title": "Case Study: How Waymo and Tesla Train Their Self-Driving Models",
+    "section": "Waymo: Sensor Fusion and Structured Environmental Modeling",
+    "text": "Waymo: Sensor Fusion and Structured Environmental Modeling\nWaymo takes a different approach. Rather than relying primarily on cameras, Waymo uses a sensor suite that includes LiDAR, cameras, and radar. LiDAR produces a detailed 3D point cloud of the environment, which allows the system to measure distances with high precision. This structured spatial data provides a strong foundation for perception and planning.\nWaymo’s machine learning strategy is closer to a robotics approach. Their models are trained on high-quality, structured inputs, and the system uses explicit mapping and probabilistic modeling to handle uncertainty. Because LiDAR and mapping provide accurate geometry, Waymo can make more reliable decisions in complex environments and poor lighting conditions.\nThe downside is scalability. LiDAR hardware is expensive and adds complexity to production. Data collection is also more resourceintensive, and mapping large geographic areas is time consuming. Waymo’s system is therefore well suited for controlled environments, such as robotaxi services, but it is harder to deploy at consumer scale (at least for now, there are rumors that individuals will be able to purchase their own personal waymo in a near future)."
+  },
+  {
+    "objectID": "posts/tesla_vs_waymo.html#a-data-science-perspective-scale-vs-precision",
+    "href": "posts/tesla_vs_waymo.html#a-data-science-perspective-scale-vs-precision",
+    "title": "Case Study: How Waymo and Tesla Train Their Self-Driving Models",
+    "section": "A Data Science Perspective: Scale vs Precision",
+    "text": "A Data Science Perspective: Scale vs Precision\nFrom a machine learning perspective, the difference between Tesla and Waymo can be summarized as a trad off between scale and precision.\nTesla’s advantage is scale. Their models are trained on massive, diverse datasets, which can improve generalization and help the system learn rare scenarios. Their approach assumes that model performance will improve as the dataset grows.\nWaymo’s advantage is precision. Their sensor fusion and mapping produce highly accurate spatial data, which reduces uncertainty in perception. This approach assumes that better input data and explicit environmental modeling lead to safer and more reliable decisions.\nIn other words, Tesla bets on generalization and model capacity, while Waymo bets on data quality and structured representation."
+  },
+  {
+    "objectID": "posts/tesla_vs_waymo.html#conclusion",
+    "href": "posts/tesla_vs_waymo.html#conclusion",
+    "title": "Case Study: How Waymo and Tesla Train Their Self-Driving Models",
+    "section": "Conclusion",
+    "text": "Conclusion\nThe Tesla vs Waymo comparison illustrates a key lesson in machine learning: success often depends more on data strategy and uncertainty management than on model architecture alone. Tesla and Waymo are solving the same problem, but they have chosen different paths. Tesla uses scale and camera based learning to mimic human vision, while Waymo uses sensor fusion and structured modeling to achieve higher precision.\nIn practice, this means Tesla’s models are constantly improving through real world exposure, allowing the system to learn from millions of driving scenarios and adapt to unexpected situations. Waymo, in contrast, prioritizes consistency and reliability by relying on highly accurate sensor inputs and detailed mapping, which reduces uncertainty but limits scalability. This contrast highlights a central trade off in machine learning, where one strategy emphasizes massive data and model flexibility, while the other emphasizes precise structured inputs and controlled environments.\nBoth approaches have strengths and limitations, and both are valid depending on the application. Ultimately, the future of autonomous driving may combine these strategies, using learning from cameras alongside precise sensor fusion for safety decisions. For now, the difference between Tesla and Waymo is a fascinating example of how ML strategy shapes real world outcomes."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code."
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "blog",
+    "section": "",
+    "text": "Case Study: How Waymo and Tesla Train Their Self-Driving Models\n\n\n\n\n\n\n\n\nJan 17, 2026\n\n\nGurveer Madurai\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nJan 12, 2026\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJan 9, 2026\n\n\nTristan O’Malley\n\n\n\n\n\nNo matching items"
+  }
+]
